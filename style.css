@@ -1,0 +1,266 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  margin: 0;
+  color: #222;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 89px 230px 44px 0px 58px;
+}
+
+.nav {
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding: 5px 30px;
+
+  height: 30px;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+.link {
+  color: rgba(0,0,0,0.87);
+  text-decoration: none;
+}
+
+.link-icon {
+  display: block;
+  color: #888;
+  font-size: 18px;
+  margin-top: 3px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.nav-list-item {
+  padding-left: 18px;
+  max-height: 30px;
+}
+
+.avatar {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.google-logo-wrapper {
+  grid-row: 2;
+  padding-top: 109px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.google-logo {
+  height: 92px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  color: rgb(36, 168, 250);
+}
+
+
+.search-input-wrapper {
+  box-sizing: border-box;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid #dfe1e5;
+  height: 46px;
+  width: 584px;
+  outline: none;
+  margin: 0 auto;
+
+}
+
+.search-input-wrapper.active, .search-input.active {
+  border-radius: 24px 24px 0 0;
+  border-bottom: 0px;
+}
+
+.search-input {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0px 90px 0px 30px;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+  color: rgba(0,0,0,.87);
+}
+
+.search-input:focus, .search-input:hover{
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+}
+
+.search-input:focus.active {
+  box-shadow: 1px -2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.input-autocomplete {
+  box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+}
+
+.input-autocomplete-wrapper {
+  grid-row: 4;
+  display: none;
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.input-autocomplete-wrapper.active {
+  display: flex;
+  justify-content: center;
+}
+
+.input-autocomplete {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 0 0 24px 24px;
+  width: 584px;
+  border: 1px solid #dfe1e5;
+  border-top: 0px;
+  background: white;
+  margin-top: -8px;
+  height: auto;
+  padding: 0 0 1em 0;
+}
+
+.input-autocomplete-list {
+  list-style-type: none;
+  margin: 8px 0;
+  padding: 0 0 50px 0;  
+}
+.input-autocomplete-item {
+  font-weight: 800;
+  padding: 1px 30px;
+  cursor: default;
+}
+
+.input-autocomplete-item:hover {
+  background: #dfe1e5;
+}
+
+.input-autocomplete.active {
+  border-top: 0px;
+}
+
+.input-autocomplete-separator {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  border-top: 1px solid #dfe1e5;
+  width: 542px;
+  margin: 0;
+}
+
+.search-input-icons-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+
+  width: 80px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.search-input-icon {
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 16px;
+  color: #888;
+  width: 40px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 45px;
+  white-space: nowrap;
+  z-index: 1;
+
+  font-size: 11px;
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  margin-left: 5px;
+  padding: 7px 10px 7px 10px;
+  font-weight: 700;
+}
+
+.tooltip:before {
+  content:'';
+  position:absolute;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #333;
+  transform: rotate(90deg);
+  left: 45%;
+
+  top:-8px;
+}
+
+.search-input-icon:hover .tooltip {
+  visibility: visible;
+}
+
+.search-buttons-wrapper {
+  grid-row: 5;
+
+  display: flex;
+  justify-content: center;
+  width: 582px;
+  height: 58px;
+  padding-top: 18px;
+  margin: 13px auto;
+}
+
+.search-buttons-wrapper.inside {
+  position: absolute;
+  bottom: 10px;
+  height: 36px;
+  padding: 0;
+  z-index: 3;
+}
+
+.search-button {
+  font-size: 14px;
+  height: 34px;
+  margin: 0px 6px;
+  padding: 0 16px;
+  background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  color: #666;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.search-button:hover {
+  color: #222;
+  border: 1px solid #c6c6c6;
+}
